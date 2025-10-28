@@ -1,0 +1,1 @@
+insert into prices select distinct model, price as dollar, round(price * 0.8,2) as euro from cell_phones

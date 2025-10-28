@@ -1,0 +1,2 @@
+create table owners (id integer not null primary key, name text not null , address text not null , tel text not null)
+create table pets(id integer not null primary key, name text not null, owner_id integer not null,foreign key (owner_id) references owners(id))

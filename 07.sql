@@ -1,0 +1,1 @@
+insert into wards select ward, district, population from crimes

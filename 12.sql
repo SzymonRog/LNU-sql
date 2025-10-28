@@ -1,0 +1,3 @@
+
+create table fruits_vegetables(id integer primary key, en text not null, fr text not null, sp text not null, ge text not null, it text not null)
+insert into fruits_vegetables(en,fr,sp,ge,it) select  fruits_vegetables_fr_es.english as en, french as fr,spanish as sp,german as ge,italian as it from fruits_vegetables_fr_es inner join fruits_vegetables_de_it on fruits_vegetables_fr_es.english = fruits_vegetables_de_it.english

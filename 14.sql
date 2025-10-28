@@ -1,0 +1,4 @@
+create table copy(order_id integer primary key not null ,first_name text not null,family_name text not null,street text not null,zip text not null, place text not null, [type] text not null,amount float not null, price float not null,value float not null, [date] text not null)
+insert into copy(first_name,family_name, street,zip,place,[type],amount,price,value,[date]) select SUBSTR(client, 1, INSTR(client, " ") - 1), SUBSTR(client, INSTR(client, " ") + 1), SUBSTR(address, 1, INSTR(address, ", ") - 1), SUBSTR(address, INSTR(address, ",") + 2, 5), SUBSTR(address, INSTR(address, ",") + 8), [type], CAST(SUBSTR(details, 9, 11) AS FLOAT), CAST(SUBSTR(details, INSTR(details, "price: ") + 7) AS FLOAT),value, [date] from halva_sales
+drop table halva_sales
+alter table copy rename to halva_sales

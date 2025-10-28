@@ -1,0 +1,1 @@
+alter table halva_sales drop column value

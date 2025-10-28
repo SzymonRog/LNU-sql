@@ -1,0 +1,3 @@
+create table authors (id integer primary key not null,first_name text not null, middle_name text, last_name text not null, country text not null);
+create table publishers(id integer primary key not null, name text not null, country text not null);
+create table books(ISBN text primary key not null, title text not null, author_id integer not null, publisher_id integer not null, foreign key(author_id) references authors(id), foreign key (publisher_id) references publishers(id));
